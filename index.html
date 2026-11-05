@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de desarrollo web: proyectos, habilidades y contacto." />
+  <title>Mi Portafolio | Desarrollo web</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio">Joseph Gerardo Hernández</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav id="menu" class="nav" aria-label="Principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="hero">
+      <h1 class="hero__title">Construyo sitios web claros, rápidos y fáciles de mantener.</h1>
+      <p class="hero__text">Soy estudiante de desarrollo web en la UNICAH. Me interesa el front-end, la accesibilidad y el rendimiento.</p>
+      <a class="btn" href="#proyectos">Ver proyectos</a>
+    </section>
+
+    <section id="sobre-mi" class="section">
+      <h2 class="section__title">Sobre mí</h2>
+      <p class="section__text">Soy una persona responsable, proactiva y con muchas ganas de aprender y desarrollar nuevas habilidades. 
+        Actualmente estudio Ingeniería en Ciencias de la Computación en la UNICAH, donde estoy adquiriendo conocimientos en programación, 
+        desarrollo de software y tecnología. Busco una oportunidad laboral en el área de informática o desarrollo de software que me 
+        permita poner en práctica mis conocimientos, adquirir experiencia y crecer profesionalmente.</p>
+    </section>
+
+    <section id="proyectos" class="section">
+      <h2 class="section__title">Proyectos</h2>
+      <div class="projects">
+        <article class="project">
+          <h3 class="project__name">Sitio web de un café</h3>
+          <p class="project__desc">Sitio mobile first en HTML y CSS para un café del Centro de Tegucigalpa.</p>
+          <a class="project__link" href="https://josh182802.github.io/Cafe-Artesanal-HN/">Ver proyecto</a>
+        </article>
+        <article class="project">
+          <h3 class="project__name">Tienda de autorepuestos</h3>
+          <p class="project__desc">Sitio de ejemplo hecho con Bootstrap para una tienda de repuestos.</p>
+          <a class="project__link" href="https://josh182802.github.io/Autorespuesto-Joshi-Bootstrap/">Ver proyecto</a>
+        </article>
+        <article class="project">
+          <h3 class="project__name">Este portafolio</h3>
+          <p class="project__desc">Vite, LESS, CSS minificado y purgado a las reglas usadas.</p>
+          <a class="project__link" href="#">Ver código</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="habilidades" class="section">
+      <h2 class="section__title">Habilidades</h2>
+      <ul class="skills">
+        <li class="skills__item">HTML5</li>
+        <li class="skills__item">CSS3 y LESS</li>
+        <li class="skills__item">JavaScript</li>
+        <li class="skills__item">Vite</li>
+        <li class="skills__item">Git y GitHub</li>
+      </ul>
+    </section>
+
+    <section id="contacto" class="section">
+      <h2 class="section__title">Contacto</h2>
+      <p class="section__text">Escríbeme a <a class="link" href="mailto:correo@ejemplo.com">josephgerardo2002@gmail.com</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Joseph Gerardo Hernández</p>
+  </footer>
+</body>
+</html>
