@@ -1,0 +1,169 @@
+@import '_variables.less';
+@import '_mixins.less';
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: @font-body;
+  line-height: 1.6;
+  color: @ink;
+  background: @paper;
+}
+
+h1, h2, h3 { font-family: @font-head; line-height: 1.2; margin: 0 0 .75rem; }
+p { margin: 0 0 1rem; max-width: 65ch; }
+
+.skip {
+  position: absolute; left: -999px;
+  &:focus { left: 1rem; top: 1rem; background: @white; padding: .5rem 1rem; z-index: 10; }
+}
+
+.link {
+  color: @cobalt;
+  .focus-ring();
+}
+
+.btn {
+  display: inline-block;
+  padding: .75rem 1.5rem;
+  background: @ink;
+  color: @white;
+  text-decoration: none;
+  border-radius: @radius;
+  .focus-ring(@sun);
+  &:hover { background: @cobalt; }
+}
+
+// Encabezado y navegación
+.site-header {
+  .container();
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+
+  .brand {
+    font-family: @font-head;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: @ink;
+    text-decoration: none;
+    .focus-ring();
+  }
+
+  .nav-toggle {
+    font: inherit;
+    padding: .4rem .9rem;
+    border: 2px solid @ink;
+    background: transparent;
+    border-radius: @radius;
+    .focus-ring();
+    .md({ display: none; });
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: .5rem;
+    padding-top: 1rem;
+
+    &.is-open { display: flex; }
+
+    a {
+      color: @ink;
+      text-decoration: none;
+      .focus-ring();
+      &:hover { color: @cobalt; text-decoration: underline; }
+    }
+
+    .md({
+      display: flex;
+      width: auto;
+      flex-direction: row;
+      gap: 1.5rem;
+      padding-top: 0;
+    });
+  }
+}
+
+// Portada
+.hero {
+  .container();
+  padding-block: 4rem 3rem;
+
+  &__title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    max-width: 20ch;
+    // subrayado amarillo bajo el titular completo
+    background: linear-gradient(@sun, @sun) 0 100% / 100% .18em no-repeat;
+    display: inline;
+  }
+
+  &__text { margin-top: 1.5rem; color: @muted; font-size: 1.15rem; }
+}
+
+// Secciones
+.section {
+  .container();
+  padding-block: 2.5rem;
+  border-top: 2px solid @ink;
+
+  &__title { font-size: 1.75rem; }
+  &__text { color: @muted; }
+}
+
+// Proyectos
+.projects {
+  display: grid;
+  gap: @gap;
+  .md({ grid-template-columns: repeat(3, 1fr); });
+}
+
+.project {
+  padding: 1.25rem;
+  background: @white;
+  border-left: 5px solid @cobalt;
+  border-radius: @radius;
+
+  &__name { font-size: 1.15rem; }
+  &__desc { color: @muted; }
+  &__link {
+    color: @cobalt;
+    font-weight: 600;
+    .focus-ring();
+  }
+}
+
+// Habilidades
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &__item {
+    padding: .4rem .9rem;
+    background: @white;
+    border: 2px solid @ink;
+    border-radius: 999px;
+  }
+}
+
+.site-footer {
+  .container();
+  padding-block: 2rem;
+  color: @muted;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+// Regla sin uso a propósito: desaparece del CSS final tras "npm run build"
+.regla-de-prueba-purge { color: red; }

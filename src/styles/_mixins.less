@@ -1,0 +1,17 @@
+@import '_variables.less';
+
+.container() {
+  width: min(100% - 2rem, 62rem);
+  margin-inline: auto;
+}
+
+.focus-ring(@c: @cobalt) {
+  &:focus-visible {
+    outline: 3px solid @c;
+    outline-offset: 3px;
+  }
+}
+
+.md(@rules) {
+  @media (min-width: @bp-md) { @rules(); }
+}
